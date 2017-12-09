@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>网红鸡对战</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="referrer" content="never">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/game.css">
+    <script>
+    (function() {
+        function o() {
+            document.documentElement.style.fontSize = (document.documentElement.clientWidth > 720 ? 720 : document.documentElement.clientWidth) / 18 + 'px';
+        }
+        var e = null;
+        window.addEventListener('resize', function() {
+            clearTimeout(e), e = setTimeout(o, 300);
+        }, !1);
+        o();
+    })(window);
+    </script>
+    <script>
+    var resourceArray = [{ id: 'bg', src: 'i/bg.png' },
+        { id: 'startSprite', src: 'i/start_sprite.png' },
+        { id: 'ring', src: 'i/ring.png' },
+        { id: 'role', src: 'i/role.png' },
+        { id: 'smoke', src: 'i/smoke.png' },
+        { id: 'gd', src: 'i/gd.png' },
+        { id: 'result', src: 'i/result.png' },
+        { id: 'number', src: 'i/number.png' },
+        { id: 'tag', src: 'i/tag.png' },
+        { id: 'cursor', src: 'i/cursor.png' }
+    ];
+    </script>
+    <style>
+    body,
+    div,
+    canvas {
+        image-rendering: optimizeSpeed;
+        -webkit-image-rendering: optimizeSpeed;
+        -webkit-interpolation-mode: nearest-neighbor;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        background: url(i/bg.png) repeat #0086cf;
+    }
+
+    body,
+    html {
+        position: relative;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    canvas {
+        margin-top: -90px;
+    }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <script src="js/hilo-standalone.min.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Asset.js"></script>
+    <script src="js/Start.js"></script>
+    <script src="js/ReadyScene.js"></script>
+    <script src="js/Role.js"></script>
+    <script src="js/Smoke.js"></script>
+    <script src="js/GD.js"></script>
+</head>
+
+<body>
+    <div class="tc" id="mask" style="display:none">
+        <!--没获奖弹窗-->
+        <div id="again" class="tc_con tc_prize" style="display: none;">
+            <div class="close"></div>
+            <!--关闭按钮-->
+            <div class="no_prize">
+                <p id="no_draw_gift_msg">
+                    有时候你不努力一下都不知道什么叫绝望！
+                </p>
+            </div>
+            <div class="no_change_btn">
+                <div class="btn play_again">
+                    再来一把
+                </div>
+            </div>
+        </div>
+        <!--游戏引导-->
+        <div class="tc_con guide_con" id="guide" style="display: none">
+            <div class="guide_bg">
+                <div class="ji" id="npc" style="display:none"></div>
+                <p>
+                    对战攻略<span>点击屏幕伸手抢金币</span>
+                </p>
+                <table class="guide">
+                    <tr>
+                        <td><span class="icon1"></span></td>
+                        <td>大于对手</td>
+                        <td>胜利</td>
+                    </tr>
+                    <tr>
+                        <td><span class="icon1"></span></td>
+                        <td>等于对手</td>
+                        <td>平局</td>
+                    </tr>
+                    <tr>
+                        <td><span class="icon2"></span></td>
+                        <td>x1</td>
+                        <td>失败</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tc_btn">
+                <div class="btn_box">
+                    <p class="btn btn_one" id="choose_player">
+                        匹配对手
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+// 引导弹窗
+function guidePop() {
+    $('#guide').toggle();
+    $('#mask').toggle();
+}
+// 再来一把弹框
+function againPop() {
+    $('#again').toggle();
+    $('#mask').toggle();
+}
+// 游戏结束回调
+function gameOverCallback(data) {
+    setTimeout(function() {
+        againPop();
+    }, 1000);
+}
+// 匹配对手
+function choosePlayer() {
+    $('#npc').show();
+    setTimeout(function() {
+        guidePop();
+        // 游戏初始化
+        game.init();
+    }, 1000);
+}
+$(function() {
+    // 再玩一把
+    $('.play_again').on('click', function() {
+        againPop();
+        game.gameRestart();
+    });
+    // 匹配对手
+    $('#choose_player').on('click', function() {
+        choosePlayer();
+    });
+    // 关闭弹窗
+    $('.close, .close_pop').on('click', function() {
+        againPop();
+    })
+    // 游戏引导
+    guidePop();
+})
+</script>
+
+</html>

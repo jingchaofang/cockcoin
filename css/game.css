@@ -1,0 +1,207 @@
+/* tianwen 2016.11.24 Twelve active */
+
+
+/* 声明基准变量 */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    position: relative;
+    width: 100%;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+.tc {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.tc_con {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -7.175rem;
+}
+
+.close {
+    position: absolute;
+    right: 0rem;
+    top: 0.5rem;
+    background: url(../i/close.png) no-repeat;
+    -webkit-background-size: 0.95rem 0.95rem;
+    width: 0.95rem;
+    height: 0.95rem;
+}
+
+.tc_pop {
+    margin-left: -6.45rem;
+}
+
+.tc_btn {
+    padding: 0.35rem 0 0;
+}
+
+.btn {
+    background: #eb2f00;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 1rem;
+    height: 1.95rem;
+    line-height: 1.95rem;
+    text-align: center;
+}
+
+.tc_exit {
+    background: url(../i/tc_exit.png) no-repeat;
+    -webkit-background-size: 12.9rem 9.85rem;
+    width: 12.9rem;
+    height: 9.85rem;
+    margin: 0 auto;
+}
+
+.tc_prize {
+    margin-left: -6.45rem;
+}
+
+.prize_c {
+    padding: 0.65rem 0.2rem 3rem;
+    height: 14rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.prize_c ul {
+    overflow: hidden;
+}
+
+.prize_c ul li {
+    width: 50%;
+    float: left;
+    margin-bottom: 0.5rem;
+}
+
+/*pop no prize*/
+
+.no_prize {
+    background: url(../i/no_prize.png) no-repeat;
+    -webkit-background-size: 12.9rem 9.85rem;
+    width: 12.9rem;
+    height: 9.85rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.no_prize p,
+.prize p {
+    color: #000;
+    font-size: 0.6rem;
+    margin-top: 10.5rem;
+    text-align: center;
+}
+
+.no_prize p {
+    font-size: 0.9rem;
+    margin-top: 6.25rem;
+    padding: 0 0.25rem;
+    line-height: 1.3rem;
+}
+
+.btn_box .btn {
+    -webkit-flex-box: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    margin: 0 0.25rem;
+}
+
+.guide_bg p {
+    color: #000;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 2.75rem;
+    padding: 0 1.2rem 0 0.75rem;
+}
+
+.guide_bg p {
+    margin-top: 2rem;
+}
+
+.guide_bg p span {
+    font-size: 0.7rem;
+    display: block;
+}
+
+
+.guide_con {
+    top: 25%;
+    margin-left: -6.75rem;
+}
+
+.guide_bg {
+    background: url(../i/guide_bg.png) no-repeat;
+    -webkit-background-size: 14.35rem 13.6rem;
+    width: 14.35rem;
+    height: 13.6rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.guide {
+    width: 7.5rem;
+    margin: 0.25rem 0 0 3rem;
+}
+
+.guide .icon1 {
+    background: url(../i/money.png) no-repeat;
+    -webkit-background-size: 1.275rem 1.25rem;
+    width: 1.275rem;
+    height: 1.25rem;
+    display: inline-block;
+}
+
+.guide .icon2 {
+    background: url(../i/dart.png) no-repeat;
+    -webkit-background-size: 1.25rem 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+}
+
+.guide_bg tr td {
+    color: #000;
+    font-size: 0.75rem;
+    height: 1.75rem;
+}
+
+.btn_box .btn_one {
+    width: 6.85rem;
+    margin: 0.6rem 0 0 3.25rem;
+}
+
+.guide_bg .ji {
+    position: absolute;
+    bottom: 2.95rem;
+    left: -0.6rem;
+    background: url(../i/ji.png) no-repeat;
+    -webkit-background-size: 6.2rem 4rem;
+    width: 6.2rem;
+    height: 4rem;
+}
